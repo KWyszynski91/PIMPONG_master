@@ -28,6 +28,7 @@ __published:	// IDE-managed Components
         TButton *Button1;
         TImage *menu;
         TButton *Button2;
+        TTimer *TimerGame;
         void __fastcall TimerBallTimer(TObject *Sender);
         void __fastcall p1goraTimer(TObject *Sender);
         void __fastcall p1dolTimer(TObject *Sender);
@@ -39,6 +40,7 @@ __published:	// IDE-managed Components
         void __fastcall p2dolTimer(TObject *Sender);
         void __fastcall FormCreate(TObject *Sender);
         void __fastcall Button2Click(TObject *Sender);
+        void __fastcall TimerGameTimer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);
