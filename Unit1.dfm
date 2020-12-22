@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 821
-  Top = 365
+  Left = 990
+  Top = 60
   Width = 900
   Height = 500
   Caption = 'PIMPONG MASTER'
@@ -11884,30 +11884,37 @@ object Form1: TForm1
   end
   object p1gora: TTimer
     Enabled = False
-    Interval = 18
+    Interval = 10
     OnTimer = p1goraTimer
     Left = 16
     Top = 160
   end
   object p1dol: TTimer
     Enabled = False
-    Interval = 18
+    Interval = 10
     OnTimer = p1dolTimer
     Left = 16
     Top = 224
   end
   object p2gora: TTimer
     Enabled = False
-    Interval = 18
+    Interval = 10
     OnTimer = p2goraTimer
     Left = 848
     Top = 160
   end
   object p2dol: TTimer
     Enabled = False
-    Interval = 18
+    Interval = 10
     OnTimer = p2dolTimer
     Left = 848
     Top = 232
+  end
+  object TimerGame: TTimer
+    Enabled = False
+    Interval = 10000
+    OnTimer = TimerGameTimer
+    Left = 408
+    Top = 392
   end
 end

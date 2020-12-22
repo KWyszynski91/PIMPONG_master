@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 821
-  Top = 365
+  Left = 990
+  Top = 60
   Width = 900
   Height = 500
   Caption = 'PIMPONG MASTER'
@@ -11841,6 +11841,23 @@ object Form1: TForm1
     Transparent = True
     Visible = False
   end
+  object Label4: TLabel
+    Left = 400
+    Top = 424
+    Width = 129
+    Height = 33
+    AutoSize = False
+    Color = clSilver
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MV Boli'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+    Transparent = True
+    Visible = False
+  end
   object Button1: TButton
     Left = 384
     Top = 272
@@ -11909,5 +11926,12 @@ object Form1: TForm1
     OnTimer = p2dolTimer
     Left = 848
     Top = 232
+  end
+  object TimerGame: TTimer
+    Enabled = False
+    Interval = 10000
+    OnTimer = TimerGameTimer
+    Left = 408
+    Top = 392
   end
 end

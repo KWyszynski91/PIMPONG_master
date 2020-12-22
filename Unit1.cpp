@@ -16,7 +16,7 @@ TForm1 *Form1;
         int odbiciaPilki=0;
         char kto;
         int punktL=0, punktP=0;
-        int czasgry=30000;
+        int sekund=0;
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -60,7 +60,7 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
                   ball->Top + ball->Height/2 >= paletka2->Top + paletka2->Height/2 - 10 &&
                   ball->Top + ball->Height/2 <= paletka2->Top + paletka2->Height/2 + 10)
                   {
-                    x=-x+2;
+                    x=-x*2;
                     odbiciaPilki++;
                     Form1->TimerBall->Interval--;
                     sndPlaySound("snd/sndhardpong.wav", SND_ASYNC);
@@ -182,6 +182,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 
   //wyzerowanie zliczeñ
         odbiciaPilki=0;
+        int sekund=0;
         punktL=0;
         punktP=0;
         x=-8, y=-8;
@@ -191,6 +192,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
         Form1->TimerBall->Enabled=true;
         Form1->TimerBall->Interval=22;
         Form1->ball->Visible=true;
+        Form1->TimerGame->Enabled=true;
   //znikniêcie tablic
                 Form1->Label1->Visible=false;
                 Form1->Label2->Visible=false;
@@ -207,12 +209,14 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
   //rozegranie kolejnej rundy
   //wysrodkowanie i wypuszczenie pileczki, wyzerowanie odbic:
         odbiciaPilki=0;
+        int sekund=0;
         Form1->ball->Left=416;
         Form1->ball->Top=200;
         Form1->TimerBall->Enabled=true;
         Form1->TimerBall->Interval=22;
         Form1->ball->Visible=true;
-        x=8, y=8;
+        Form1->TimerGame->Enabled=true;
+        x=x*-1, y=y*-1;
   //znikniêcie tablic
         Form1->Label1->Visible=false;
         Form1->Label2->Visible=false;
@@ -223,4 +227,14 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm1::TimerGameTimer(TObject *Sender)
+{
+        sekund=sekund+10;
+        AnsiString sek;
+        sek=IntToStr(sekund);
+  //instrukcja wyzwalana co 10 sekund
+  Form1->TimerBall->Interval--;
+}
+//---------------------------------------------------------------------------
 
