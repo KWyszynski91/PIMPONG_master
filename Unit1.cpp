@@ -182,7 +182,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 
   //wyzerowanie zliczeñ
         odbiciaPilki=0;
-        int sekund=0;
+        sekund=0;
         punktL=0;
         punktP=0;
         x=-8, y=-8;
@@ -209,7 +209,7 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
   //rozegranie kolejnej rundy
   //wysrodkowanie i wypuszczenie pileczki, wyzerowanie odbic:
         odbiciaPilki=0;
-        int sekund=0;
+        sekund=0;
         Form1->ball->Left=416;
         Form1->ball->Top=200;
         Form1->TimerBall->Enabled=true;
