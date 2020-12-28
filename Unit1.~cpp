@@ -60,7 +60,7 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
                   ball->Top + ball->Height/2 >= paletka2->Top + paletka2->Height/2 - 10 &&
                   ball->Top + ball->Height/2 <= paletka2->Top + paletka2->Height/2 + 10)
                   {
-                    x=-x+2;
+                    x=-x*2;
                     odbiciaPilki++;
                     Form1->TimerBall->Interval--;
                     sndPlaySound("snd/sndhardpong.wav", SND_ASYNC);
@@ -200,7 +200,6 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
                 Form1->Button1->Visible=false;
                 Form1->Button2->Visible=false;
                 Form1->menu->Visible=false;
-                Form1->Label4->Visible=false;
   }
 }
 //---------------------------------------------------------------------------
@@ -217,7 +216,7 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
         Form1->TimerBall->Interval=22;
         Form1->ball->Visible=true;
         Form1->TimerGame->Enabled=true;
-        x=8, y=8;
+        x=x*-1, y=y*-1;
   //znikniêcie tablic
         Form1->Label1->Visible=false;
         Form1->Label2->Visible=false;
@@ -225,7 +224,6 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
         Form1->Button1->Visible=false;
         Form1->Button2->Visible=false;
         Form1->menu->Visible=false;
-        Form1->Label4->Visible=false;
 }
 //---------------------------------------------------------------------------
 
@@ -236,8 +234,6 @@ void __fastcall TForm1::TimerGameTimer(TObject *Sender)
         AnsiString sek;
         sek=IntToStr(sekund);
   //instrukcja wyzwalana co 10 sekund
-  Form1->Label4->Visible=true;
-  Form1->Label4->Caption="Minelo "+sek+" sek.";
   Form1->TimerBall->Interval--;
 }
 //---------------------------------------------------------------------------

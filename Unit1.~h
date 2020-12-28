@@ -28,7 +28,6 @@ __published:	// IDE-managed Components
         TButton *Button1;
         TImage *menu;
         TButton *Button2;
-        TLabel *Label4;
         TTimer *TimerGame;
         void __fastcall TimerBallTimer(TObject *Sender);
         void __fastcall p1goraTimer(TObject *Sender);
