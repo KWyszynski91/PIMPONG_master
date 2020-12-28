@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 990
-  Top = 60
+  Left = 861
+  Top = 309
   Width = 900
   Height = 500
   Caption = 'PIMPONG MASTER'
@@ -18,7 +18,7 @@ object Form1: TForm1
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
   TextHeight = 13
-  object tlo: TShape
+  object background: TShape
     Left = 0
     Top = 0
     Width = 884
@@ -11877,7 +11877,7 @@ object Form1: TForm1
   end
   object TimerBall: TTimer
     Enabled = False
-    Interval = 22
+    Interval = 30
     OnTimer = TimerBallTimer
     Left = 400
     Top = 16
@@ -11909,12 +11909,5 @@ object Form1: TForm1
     OnTimer = p2dolTimer
     Left = 848
     Top = 232
-  end
-  object TimerGame: TTimer
-    Enabled = False
-    Interval = 10000
-    OnTimer = TimerGameTimer
-    Left = 408
-    Top = 392
   end
 end
